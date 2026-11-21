@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>21 November 2026 — The Day in One Image</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1024px;height:1024px;overflow:hidden}
+  body{
+    font-family:"DejaVu Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    background:#f5eddc;color:#17353b;padding:12px;
+    display:flex;flex-direction:column;gap:7px;
+  }
+  /* ---------- masthead ---------- */
+  header{height:90px;flex:0 0 auto;display:flex;gap:9px}
+  .mast{
+    flex:1 1 auto;background:#0c383d;border-radius:10px;color:#fdf6e3;
+    padding:8px 18px 6px;position:relative;overflow:hidden;
+  }
+  .mast .kicker{font-size:11px;font-weight:800;letter-spacing:4.5px;color:#e9a13b}
+  .mast .dayline{display:flex;align-items:baseline;gap:16px;margin-top:1px;white-space:nowrap}
+  .mast .saturday{font-size:43px;font-weight:800;letter-spacing:1px;line-height:1.02}
+  .mast .saturday em{font-style:normal;color:#ff8c5a}
+  .mast .fulldate{font-size:21px;font-weight:800;letter-spacing:2px;color:#fdf6e3}
+  .mast .fulldate span{color:#ff8c5a}
+  .mast .edition{
+    position:absolute;right:16px;bottom:7px;font-size:9.5px;font-weight:700;
+    letter-spacing:1.8px;color:#bcd8d2;
+  }
+  .count{
+    flex:0 0 198px;background:#e4572e;border-radius:10px;color:#fff7ec;
+    padding:9px 14px 7px;overflow:hidden;
+  }
+  .count .n{font-size:25px;font-weight:800;line-height:1.05;white-space:nowrap}
+  .count .c{font-size:12px;font-weight:800;letter-spacing:2px;margin-top:3px;line-height:1.3}
+  .count .c small{font-size:10px;letter-spacing:1.6px;color:#ffe3c2}
+  /* ---------- cards ---------- */
+  .panel{background:#fffdf6;border:1.5px solid #d8cdb2;border-radius:10px;overflow:hidden;display:flex}
+  .num{
+    display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;
+    border-radius:50%;background:#e4572e;color:#fff;font-size:12px;font-weight:800;
+    margin-right:6px;flex:0 0 auto;vertical-align:1px;
+  }
+  .tag{font-size:9.5px;font-weight:800;letter-spacing:1.5px;color:#0d6e6b;text-transform:uppercase}
+  .headline{font-weight:800;color:#102e33;line-height:1.09}
+  .summary{color:#4c5a54;font-weight:600;line-height:1.2}
+  /* hero */
+  .hero{height:136px;flex:0 0 auto}
+  .hero .scene{flex:0 0 338px;background:#0c383d}
+  .hero .text{flex:1 1 auto;padding:8px 14px 7px}
+  .hero .tag{font-size:11px}
+  .hero .headline{font-size:24px;margin-top:3px}
+  .hero .summary{font-size:12px;margin-top:4px}
+  /* rows */
+  .strip{display:flex;gap:7px;flex:0 0 auto}
+  .strip .panel{flex:1 1 0;flex-direction:column}
+  .strip .scene{height:24px;flex:0 0 auto}
+  .strip .text{padding:4px 10px 5px}
+  .strip .headline{font-size:13.4px;margin-top:2px}
+  .strip .summary{font-size:9.4px;margin-top:3px;line-height:1.18}
+  .r-two{height:112px}
+  .r-two .headline{font-size:15px}
+  .r-two .summary{font-size:9.8px}
+  .r-three-a{height:128px}
+  .r-three-b{height:126px}
+  .r-three-c{height:114px}
+  .scene svg{width:100%;height:100%;display:block}
+  .wash-a{background:#dcebe4}.wash-b{background:#f3e2c7}.wash-c{background:#d9e6ef}
+  .wash-d{background:#e8dfc8}.wash-e{background:#f0ddcf}.wash-f{background:#dde8d8}
+  .wash-g{background:#e6e0ef}.wash-h{background:#f3d9d2}.wash-i{background:#d8ecec}
+  .wash-j{background:#e9ecc9}.wash-k{background:#f6e3ee}
+  /* ---------- atlas band ---------- */
+  .atlas{
+    flex:1 1 auto;background:#0c383d;border-radius:10px;color:#d9ece7;
+    padding:8px 12px 7px;display:flex;flex-direction:column;min-height:0;overflow:hidden;
+  }
+  .atlas .atitle{display:flex;justify-content:space-between;align-items:baseline}
+  .atlas .atitle .t{font-size:13px;font-weight:800;letter-spacing:2.2px;color:#ffd9a8}
+  .atlas .atitle .t span{color:#ff8c5a}
+  .atlas .atitle .note{font-size:8.5px;font-weight:700;letter-spacing:1.2px;color:#8fb8ad}
+  .atlas .band{display:flex;gap:14px;margin-top:4px;flex:1 1 auto;min-height:0}
+  .atlas .map{flex:0 0 468px}
+  .atlas .map svg{width:100%;height:143px;display:block}
+  .briefs{flex:1 1 auto;display:flex;gap:14px;border-left:1px solid #1d5a60;padding-left:14px}
+  .briefs .bcol{flex:1 1 0}
+  .brief{font-size:8.8px;line-height:1.16;font-weight:600;color:#d9ece7;margin-bottom:3px}
+  .brief b{color:#e9a13b;font-weight:800}
+  .brief .place{color:#ff8c5a;font-weight:800;letter-spacing:.4px}
+  /* ---------- footer ---------- */
+  footer{
+    height:17px;flex:0 0 auto;display:flex;align-items:center;
+    font-size:7.9px;font-weight:700;letter-spacing:0;color:#6b6250;padding:0 2px;white-space:nowrap;overflow:hidden;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="mast">
+    <div class="kicker">THE DAY IN ONE IMAGE</div>
+    <div class="dayline">
+      <div class="saturday">SATUR<em>DAY</em></div>
+      <div class="fulldate">21 NOVEMBER <span>2026</span></div>
+    </div>
+    <div class="edition">THE WORLD SINCE FRIDAY NIGHT — ONE FRAME, THE WHOLE PLANET</div>
+  </div>
+  <div class="count">
+    <div class="n">22 STORIES</div>
+    <div class="c">6 CONTINENTS<br><small>ONE DAY · ONE FRAME</small></div>
+  </div>
+</header>
+
+<!-- 1 · HERO -->
+<article class="panel hero">
+  <div class="scene">
+    <svg viewBox="0 0 338 128" preserveAspectRatio="none">
+      <rect width="338" height="128" fill="#0c383d"/>
+      <circle cx="292" cy="22" r="11" fill="#e9a13b"/>
+      <g fill="#123f4d"><rect x="18" y="62" width="34" height="48"/><rect x="62" y="48" width="26" height="62"/><rect x="238" y="54" width="30" height="56"/><rect x="278" y="68" width="38" height="42"/></g>
+      <g fill="#fdf6e3" opacity="0.85"><rect x="26" y="70" width="6" height="6"/><rect x="38" y="84" width="6" height="6"/><rect x="70" y="58" width="6" height="6"/><rect x="70" y="76" width="6" height="6"/><rect x="246" y="64" width="6" height="6"/><rect x="286" y="78" width="6" height="6"/></g>
+      <rect x="104" y="34" width="20" height="76" fill="#1d5a60"/>
+      <path d="M98 34 h32 l-16 -14 z" fill="#e4572e"/>
+      <g stroke="#ffd9a8" stroke-width="2.6" fill="none">
+        <path d="M30 10 L104 52"/><path d="M150 4 L128 48"/><path d="M214 12 L142 54"/>
+      </g>
+      <g fill="#ff8c5a"><circle cx="108" cy="54" r="9"/><circle cx="130" cy="50" r="7"/><circle cx="144" cy="56" r="8"/></g>
+      <g fill="#fdf6e3"><circle cx="108" cy="54" r="3.4"/><circle cx="130" cy="50" r="2.6"/><circle cx="144" cy="56" r="3"/></g>
+      <rect x="0" y="110" width="338" height="18" fill="#082226"/>
+      <path d="M0 110 h338" stroke="#e9a13b" stroke-width="3"/>
+    </svg>
+  </div>
+  <div class="text">
+    <div class="tag"><span class="num">1</span>Riyadh · Saudi Arabia</div>
+    <div class="headline">Saudi air defences down three Houthi ballistic missiles over Riyadh</div>
+    <div class="summary">Saudi air defences intercepted three ballistic missiles fired from Yemen in the early hours of Saturday; the pre-dawn interceptions mark a sharp new escalation in the Houthi campaign against the kingdom.</div>
+  </div>
+</article>
+
+<!-- row: 2, 3 -->
+<div class="strip r-two">
+  <article class="panel">
+    <div class="scene wash-b"><svg viewBox="0 0 300 30">
+      <path d="M8 22 L62 12 L104 20 L150 8 L198 18 L244 10 L292 20" fill="none" stroke="#c8402a" stroke-width="2.8"/>
+      <path d="M118 4 v22 M112 10 l6 -6 l6 6 M112 20 l6 6 l6 -6" stroke="#0c383d" stroke-width="2.2" fill="none"/>
+      <circle cx="228" cy="21" r="6" fill="none" stroke="#e4572e" stroke-width="2.4"/><path d="M228 16 v10 M223 21 h10" stroke="#e4572e" stroke-width="2"/>
+    </svg></div>
+    <div class="text">
+      <div class="tag"><span class="num">2</span>Central Peru</div>
+      <div class="headline">Magnitude 6.8 earthquake rocks central Peru, felt in Lima</div>
+      <div class="summary">The quake struck at 00:09 GMT on Saturday; buildings swayed in the capital and damage assessments were under way.</div>
+    </div>
+  </article>
+  <article class="panel">
+    <div class="scene wash-c"><svg viewBox="0 0 300 30">
+      <circle cx="52" cy="15" r="10" fill="none" stroke="#0d6e6b" stroke-width="2.6"/><path d="M52 8 v7 l6 4" fill="none" stroke="#e4572e" stroke-width="2.4"/>
+      <path d="M92 22 q14 -12 28 0 t28 0 t28 0 t28 0 t28 0" fill="none" stroke="#3d7ca8" stroke-width="2.6"/>
+      <rect x="238" y="6" width="34" height="18" rx="3" fill="#e9a13b"/><path d="M244 15 h22" stroke="#0c383d" stroke-width="2.2"/>
+    </svg></div>
+    <div class="text">
+      <div class="tag"><span class="num">3</span>Antalya · Türkiye</div>
+      <div class="headline">COP31 talks run into overtime in Antalya</div>
+      <div class="summary">Negotiators blew past Friday's deadline as Saturday sessions tried to rescue a deal on climate finance and fossil fuels.</div>
+    </div>
+  </article>
+</div>
+
+<!-- row: 4, 5, 6 -->
+<div class="strip r-three-a">
+  <article class="panel">
+    <div class="scene wash-d"><svg viewBox="0 0 200 30">
+      <rect x="22" y="6" width="42" height="18" rx="2" fill="#0c383d"/><path d="M29 12 h28 M29 18 h20" stroke="#fdf6e3" stroke-width="2.2"/>
+      <path d="M96 6 l18 18 M114 6 L96 24" stroke="#c8402a" stroke-width="3"/>
+      <path d="M140 22 l22 -14 M148 24 h28" stroke="#0d6e6b" stroke-width="2.6" fill="none"/>
+    </svg></div>
+    <div class="text">
+      <div class="tag"><span class="num">4</span>Hanoi · Vietnam</div>
+      <div class="headline">Vietnam fast-tracks land seizures, scraps death penalty for six offences</div>
+      <div class="summary">Deputies voted 479–5 on Saturday to speed state land acquisition and end capital punishment for six crimes.</div>
+    </div>
+  </article>
+  <article class="panel">
+    <div class="scene wash-e"><svg viewBox="0 0 200 30">
+      <rect x="14" y="10" width="58" height="13" rx="4" fill="#e4572e" transform="rotate(7 43 16)"/>
+      <rect x="82" y="8" width="58" height="13" rx="4" fill="#0c383d"/>
+      <path d="M8 26 h184" stroke="#0c383d" stroke-width="2.4" stroke-dasharray="8 5"/>
+      <circle cx="34" cy="25" r="3.4" fill="#0c383d"/><circle cx="112" cy="23" r="3.4" fill="#0c383d"/>
+    </svg></div>
+    <div class="text">
+      <div class="tag"><span class="num">5</span>South Korea</div>
+      <div class="headline">Freight train derailment paralyses Korea's Gyeongbu Line</div>
+      <div class="summary">A freight train derailed at 05:37 on Saturday, blocking the country's busiest rail corridor; no injuries were reported.</div>
+    </div>
+  </article>
+  <article class="panel">
+    <div class="scene wash-f"><svg viewBox="0 0 200 30">
+      <circle cx="148" cy="15" r="11" fill="#e9a13b"/><path d="M139 10 q9 5 18 0 M141 21 q7 -4 14 0" stroke="#c8402a" stroke-width="2" fill="none"/>
+      <rect x="30" y="11" width="34" height="8" rx="4" fill="#0c383d"/><path d="M64 15 h34" stroke="#e4572e" stroke-width="2.6"/><circle cx="104" cy="15" r="3" fill="#e4572e"/>
+      <g fill="#0c383d"><circle cx="18" cy="7" r="1.8"/><circle cx="86" cy="5" r="1.8"/><circle cx="182" cy="6" r="1.8"/></g>
+    </svg></div>
+    <div class="text">
+      <div class="tag"><span class="num">6</span>Mercury Orbit · ESA–JAXA</div>
+      <div class="headline">BepiColombo fires its engine to enter orbit around Mercury</div>
+      <div class="summary">The insertion burn, set for 19:24 CET on Saturday, ends an eight-year cruise to the innermost planet.</div>
+    </div>
+  </article>
+</div>
+
+<!-- row: 7, 8, 9 -->
+<div class="strip r-three-b">
+  <article class="panel">
+    <div class="scene wash-g"><svg viewBox="0 0 200 30">
+      <rect x="30" y="5" width="7" height="20" rx="3" fill="#0c383d" transform="rotate(24 33 15)"/>
+      <circle cx="82" cy="18" r="7" fill="#c8402a"/>
+      <path d="M118 24 L168 8 M160 6 l12 3 l-4 11 z" fill="#e9a13b"/>
+      <path d="M12 26 h176" stroke="#2a7a4a" stroke-width="2.6"/>
+    </svg></div>
+    <div class="text">
+      <div class="tag"><span class="num">7</span>Wellington · New Zealand</div>
+      <div class="headline">Rahul completes the SENA set with a Wellington century</div>
+      <div class="summary">KL Rahul's hundred on Saturday made him the first Indian opener to score a Test century in all four SENA countries.</div>
+    </div>
+  </article>
+  <article class="panel">
+    <div class="scene wash-h"><svg viewBox="0 0 200 30">
+      <path d="M8 24 L52 8 L84 20 L118 6 L192 24 Z" fill="#d9e6ef"/>
+      <rect x="86" y="12" width="28" height="13" fill="#fffdf6" stroke="#0c383d" stroke-width="2"/><path d="M93 18 l5 5 l9 -9" fill="none" stroke="#e4572e" stroke-width="2.4"/>
+    </svg></div>
+    <div class="text">
+      <div class="tag"><span class="num">8</span>Ladakh · India</div>
+      <div class="headline">Ladakh votes in its first-ever local elections</div>
+      <div class="summary">Polling on Saturday opened the Himalayan territory's first local elections since it became a separate union territory.</div>
+    </div>
+  </article>
+  <article class="panel">
+    <div class="scene wash-i"><svg viewBox="0 0 200 30">
+      <rect x="18" y="12" width="30" height="13" fill="#c8402a"/><rect x="152" y="12" width="30" height="13" fill="#0c383d"/>
+      <path d="M54 18 q46 -14 92 0" fill="none" stroke="#0d6e6b" stroke-width="2.6"/><circle cx="100" cy="11" r="5" fill="#e9a13b"/>
+    </svg></div>
+    <div class="text">
+      <div class="tag"><span class="num">9</span>Beijing · China</div>
+      <div class="headline">Singapore's Wong meets Li Qiang in Beijing</div>
+      <div class="summary">PM Lawrence Wong's Saturday talks with Premier Li Qiang anchored a weekend of summit diplomacy in the Chinese capital.</div>
+    </div>
+  </article>
+</div>
+
+<!-- row: 10, 11, 12 -->
+<div class="strip r-three-c">
+  <article class="panel">
+    <div class="scene wash-j"><svg viewBox="0 0 200 30">
+      <g fill="#0c383d"><circle cx="36" cy="10" r="4"/><circle cx="66" cy="10" r="4"/><circle cx="96" cy="10" r="4"/></g>
+      <g stroke="#0c383d" stroke-width="2.4"><path d="M36 14 v9 M66 14 v9 M96 14 v9"/></g>
+      <rect x="122" y="7" width="52" height="14" rx="2" fill="#e4572e"/><path d="M130 14 h36" stroke="#fff" stroke-width="2.2"/>
+    </svg></div>
+    <div class="text">
+      <div class="tag"><span class="num">10</span>Australia</div>
+      <div class="headline">Thousands rally to defend home birth across Australia</div>
+      <div class="summary">More than 10,000 people marched in 25 towns on Saturday against proposed limits on home-birth care.</div>
+    </div>
+  </article>
+  <article class="panel">
+    <div class="scene wash-k"><svg viewBox="0 0 200 30">
+      <ellipse cx="100" cy="15" rx="24" ry="11" fill="#7a3b2e" transform="rotate(-18 100 15)"/>
+      <path d="M84 9 q16 12 32 12 M88 5 q12 16 26 22" stroke="#fdf6e3" stroke-width="2" fill="none"/>
+      <path d="M14 25 h52 M134 25 h52" stroke="#2a7a4a" stroke-width="2.6"/>
+    </svg></div>
+    <div class="text">
+      <div class="tag"><span class="num">11</span>Dublin · Ireland</div>
+      <div class="headline">Ireland host the Springboks in a Dublin blockbuster</div>
+      <div class="summary">Saturday's 16:40 GMT kick-off pits Ireland against world champions South Africa in the autumn internationals.</div>
+    </div>
+  </article>
+  <article class="panel">
+    <div class="scene wash-a"><svg viewBox="0 0 200 30">
+      <rect x="12" y="6" width="52" height="18" rx="4" fill="#0c383d"/><path d="M20 15 h36" stroke="#ff8c5a" stroke-width="2.4"/>
+      <path d="M84 22 q22 -12 44 0 l18 3 l-8 -9 h-28 z" fill="#e4572e"/>
+      <circle cx="104" cy="25" r="4" fill="#0c383d"/><circle cx="140" cy="25" r="4" fill="#0c383d"/>
+      <circle cx="182" cy="9" r="4" fill="#e9a13b"/>
+    </svg></div>
+    <div class="text">
+      <div class="tag"><span class="num">12</span>Las Vegas · USA</div>
+      <div class="headline">Las Vegas Grand Prix lights up the Strip on Saturday night</div>
+      <div class="summary">Formula 1's 20:00 local start makes the Nevada street race a Saturday-night spectacle under the neon.</div>
+    </div>
+  </article>
+</div>
+
+<!-- atlas + briefs -->
+<section class="atlas">
+  <div class="atitle">
+    <div class="t">THE ATLAS <span>— SATURDAY IN BRIEFS</span></div>
+    <div class="note">NUMBERED DOTS = PANELS 1–12 · SCHEMATIC, NOT TO SCALE</div>
+  </div>
+  <div class="band">
+  <div class="map">
+    <svg viewBox="0 0 984 300">
+      <defs>
+        <pattern id="landdots" width="11" height="11" patternUnits="userSpaceOnUse">
+          <circle cx="3" cy="3" r="2.1" fill="#2a7a72"/>
+        </pattern>
+      </defs>
+      <rect width="984" height="300" fill="#0b2a2e"/>
+      <g fill="url(#landdots)" stroke="#1d5a60" stroke-width="1.4">
+        <path d="M42 78 L78 34 L168 22 L252 38 L268 78 L228 104 L236 138 L188 128 L150 148 L104 118 L58 112 Z"/>
+        <path d="M182 158 L238 146 L272 178 L258 244 L224 282 L198 224 L178 190 Z"/>
+        <path d="M452 62 L492 30 L552 34 L574 66 L548 92 L560 108 L512 112 L474 96 L450 84 Z"/>
+        <path d="M466 122 L528 106 L588 122 L602 176 L566 238 L508 244 L472 190 Z"/>
+        <path d="M566 44 L700 24 L838 34 L898 72 L872 116 L896 148 L812 168 L748 142 L668 154 L606 118 L574 76 Z"/>
+        <path d="M806 196 L902 182 L946 208 L928 252 L842 258 L804 232 Z"/>
+        <path d="M922 252 L968 246 L978 268 L946 284 L920 272 Z"/>
+      </g>
+      <g font-family="DejaVu Sans,Arial" font-size="17" font-weight="800" text-anchor="middle">
+        <g><circle cx="578" cy="128" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="578" y="133" fill="#fff">1</text></g>
+        <g><circle cx="212" cy="218" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="212" y="223" fill="#fff">2</text></g>
+        <g><circle cx="548" cy="96" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="548" y="101" fill="#fff">3</text></g>
+        <g><circle cx="762" cy="138" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="762" y="143" fill="#fff">4</text></g>
+        <g><circle cx="818" cy="102" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="818" y="107" fill="#fff">5</text></g>
+        <g><circle cx="512" cy="74" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="512" y="79" fill="#fff">6</text></g>
+        <g><circle cx="952" cy="268" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="952" y="273" fill="#fff">7</text></g>
+        <g><circle cx="700" cy="112" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="700" y="117" fill="#fff">8</text></g>
+        <g><circle cx="788" cy="96" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="788" y="101" fill="#fff">9</text></g>
+        <g><circle cx="872" cy="238" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="872" y="243" fill="#fff">10</text></g>
+        <g><circle cx="478" cy="66" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="478" y="71" fill="#fff">11</text></g>
+        <g><circle cx="118" cy="104" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="118" y="109" fill="#fff">12</text></g>
+      </g>
+      <g fill="#8fb8ad" font-family="DejaVu Sans,Arial" font-size="20" font-weight="700" letter-spacing="2">
+        <text x="52" y="166">N. AMERICA</text>
+        <text x="140" y="296">S. AMERICA</text>
+        <text x="486" y="266">AFRICA</text>
+        <text x="690" y="196">ASIA</text>
+        <text x="796" y="282">OCEANIA</text>
+      </g>
+    </svg>
+    <div style="font-size:8.8px;font-weight:600;color:#8fb8ad;margin-top:5px;line-height:1.3">Dot 1 is the hero: Riyadh, where three missiles were intercepted before dawn. Dots 2–12 follow the panel order across six continents.</div>
+  </div>
+  <div class="briefs">
+    <div class="bcol">
+      <div class="brief"><b>13</b> <span class="place">TWICKENHAM —</span> England face New Zealand on Saturday, with Beauden Barrett winning his 150th All Blacks cap.</div>
+      <div class="brief"><b>14</b> <span class="place">MARKETS —</span> Bitcoin slid 5.1% to $55,830 in Saturday trading (0413 GMT, Reuters), extending the crypto sell-off.</div>
+      <div class="brief"><b>15</b> <span class="place">VANDENBERG —</span> SpaceX launched the USSF-317 mission for the US Space Force at 04:20 UTC on Saturday.</div>
+      <div class="brief"><b>16</b> <span class="place">JAKARTA —</span> Guns N' Roses play Jakarta on Saturday night, with some 20,000 fans expected.</div>
+      <div class="brief"><b>17</b> <span class="place">NAGA CITY —</span> Voters decided Naga City's cityhood in a plebiscite held across the city on Saturday.</div>
+    </div>
+    <div class="bcol">
+      <div class="brief"><b>18</b> <span class="place">ULSAN —</span> President Lee Jae Myung toured SK hynix's AI data centre build in Ulsan on Saturday morning.</div>
+      <div class="brief"><b>19</b> <span class="place">WARSAW —</span> NATO chief Mark Rutte held talks in Warsaw on Saturday as the alliance reviewed its eastern posture.</div>
+      <div class="brief"><b>20</b> <span class="place">NAIROBI —</span> Kenya's judiciary disclosed 579,954 pending cases, naming its hardest-working and slowest judges.</div>
+      <div class="brief"><b>21</b> <span class="place">PYONGYANG —</span> Kim Jong Un toured munitions factories, KCNA reported on Saturday.</div>
+      <div class="brief"><b>22</b> <span class="place">US SOUTHEAST —</span> A coastal storm brought heavy rain and flooding risk to the US Southeast through Saturday.</div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<footer>
+  <span>SOURCES: Reuters · AFP · AP · Yonhap · ESA · CNA · The Hindu · NZ Herald · The Standard, Nairobi · BBC · ABC Australia · France 24 — every story day-checked against two independent sources; full checks in SOURCES.md</span>
+</footer>
+
+</body>
+</html>
