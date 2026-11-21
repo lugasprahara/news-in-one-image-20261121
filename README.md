@@ -1,5 +1,9 @@
 # 21 November 2026 — The Day in One Image
 
+[![make.fun · news-image-20261121](https://make.fun/badge/news-image-20261121.svg)](https://make.fun/bounty/news-image-20261121?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261121)
+[![rank](https://make.fun/badge/news-image-20261121/lugasprahara/news-in-one-image-20261121/rank.svg)](https://make.fun/bounty/news-image-20261121/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261121)
+[![reward](https://make.fun/badge/news-image-20261121/lugasprahara/news-in-one-image-20261121/reward.svg)](https://make.fun/bounty/news-image-20261121?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261121)
+
 ![Submission](https://img.shields.io/badge/make.fun-news--image--20261121-blue) ![License](https://img.shields.io/badge/license-MIT-green) ![Author](https://img.shields.io/badge/author-lugasprahara-orange)
 
 One 1024×1024 front page for Saturday 21 November 2026: a Saudi missile interception over Riyadh leads 22 verified stories from 6 continents — every item day-checked against at least two independent sources (see SOURCES.md).
